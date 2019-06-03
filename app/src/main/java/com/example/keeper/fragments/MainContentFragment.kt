@@ -1,6 +1,7 @@
 package com.example.keeper.fragments
 
 import android.content.Context
+import android.graphics.Color
 import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -63,10 +64,9 @@ class MainContentFragment : Fragment() {
         view.textview_puntosA.text = game.puntosA.toString()
         view.textview_puntosB.text = game.puntosB.toString()
         view.textview_fechaHora.text = "Date & time:" + game.fecha + " " + game.tiempo
-
-
-
-
+        view.button_done.setBackgroundColor(Color.TRANSPARENT)
+        view.button_fecha.setBackgroundColor(Color.TRANSPARENT)
+        view.button_hora.setBackgroundColor(Color.TRANSPARENT)
 
     }
 
