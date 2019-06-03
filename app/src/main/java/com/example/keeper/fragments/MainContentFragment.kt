@@ -62,7 +62,7 @@ class MainContentFragment : Fragment() {
         view.textview_equipoB.text = game.equipoB
         view.textview_puntosA.text = game.puntosA.toString()
         view.textview_puntosB.text = game.puntosB.toString()
-        view.textview_fechaHora.text = game.fecha + " " + game.tiempo
+        view.textview_fechaHora.text = "Date & time:" + game.fecha + " " + game.tiempo
 
 
 

@@ -40,7 +40,7 @@ class GameListAdapter (private val clickListener: (Game)-> Unit):RecyclerView.Ad
         fun bind(item: Game,clickListener: (Game) -> Unit) = with(itemView){
             Log.d("HOLAAA",item.nombre)
             name_game.text = item.nombre
-
+            dateTime_game.text = "Date & time:" + item.fecha + " " + item.tiempo
             this.setOnClickListener{clickListener(item)}
         }
     }
