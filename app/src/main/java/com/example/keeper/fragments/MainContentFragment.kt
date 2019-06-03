@@ -64,9 +64,9 @@ class MainContentFragment : Fragment() {
         view.textview_puntosA.text = game.puntosA.toString()
         view.textview_puntosB.text = game.puntosB.toString()
         view.textview_fechaHora.text = "Date & time:" + game.fecha + " " + game.tiempo
-        view.button_done.setBackgroundColor(Color.TRANSPARENT)
-        view.button_fecha.setBackgroundColor(Color.TRANSPARENT)
-        view.button_hora.setBackgroundColor(Color.TRANSPARENT)
+//        view.button_done.setBackgroundColor(Color.TRANSPARENT)
+      //  view.button_fecha.setBackgroundColor(Color.TRANSPARENT)
+        //view.button_hora.setBackgroundColor(Color.TRANSPARENT)
 
     }
 
