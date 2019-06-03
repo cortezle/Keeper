@@ -12,7 +12,10 @@ data class Game(
     var puntosA: Int,
     var equipoB: String,
     var puntosB: Int,
+    var fecha: String,
+    var tiempo: String,
     @PrimaryKey var idGame:String
+
 ): Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readString(),
@@ -20,6 +23,8 @@ data class Game(
         parcel.readInt(),
         parcel.readString(),
         parcel.readInt(),
+        parcel.readString(),
+        parcel.readString(),
         parcel.readString()
     )
 
@@ -29,6 +34,8 @@ data class Game(
         dest.writeInt(puntosA)
         dest.writeString(equipoB)
         dest.writeInt(puntosB)
+        dest.writeString(fecha)
+        dest.writeString(tiempo)
         dest.writeString(idGame)
     }
 

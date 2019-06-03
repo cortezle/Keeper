@@ -10,7 +10,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 
-@Database(entities = arrayOf(Game::class),version = 1)
+@Database(entities = arrayOf(Game::class),version = 2)
 
 
 public abstract class GameRoomDatabase : RoomDatabase() {
@@ -57,10 +57,10 @@ public abstract class GameRoomDatabase : RoomDatabase() {
 
         suspend fun populateDatabase(gameDao: GameDao) {
 
-            var game1 = Game("Lakers"+"vs"+"Cavs","Lakers", 12, "Cavaliers", 21, "lakerscavs")
+            var game1 = Game("Lakers"+"vs"+"Cavs","Lakers", 12, "Cavaliers", 21,"05/04/2004","12:30 am", "lakerscavs")
             gameDao.insert(game1)
 
-            var game2 = Game("Rockets"+"vs"+"Warriors","Rockets", 122, "Warriors", 121, "lakerscavs2")
+            var game2 = Game("Rockets"+"vs"+"Warriors","Rockets", 122, "Warriors", 121, "05/04/2004","12:30 am","lakerscavs2")
             gameDao.insert(game2)
 
 

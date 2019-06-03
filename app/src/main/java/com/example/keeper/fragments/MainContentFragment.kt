@@ -15,6 +15,7 @@ import com.example.keeper.database.entities.Game
 import com.example.keeper.database.entities.GameViewModel
 import com.example.keeper.utils.AppConstants
 import kotlinx.android.synthetic.main.activity_main.view.*
+import kotlinx.android.synthetic.main.activity_new_game.view.*
 import kotlinx.android.synthetic.main.fragment_main_content.view.*
 
 
@@ -61,6 +62,11 @@ class MainContentFragment : Fragment() {
         view.textview_equipoB.text = game.equipoB
         view.textview_puntosA.text = game.puntosA.toString()
         view.textview_puntosB.text = game.puntosB.toString()
+        view.textview_fechaHora.text = game.fecha + " " + game.tiempo
+
+
+
+
 
     }
 

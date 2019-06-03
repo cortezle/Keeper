@@ -70,6 +70,7 @@ class NewGameActivity : AppCompatActivity() {
                 selectedDate.set(Calendar.DAY_OF_MONTH,dayOfMonth)
                 val date = formate.format(selectedDate.time)
                 Toast.makeText(this,"date : " + date,Toast.LENGTH_SHORT).show()
+                           tv_fecha.text = formate.format(selectedDate.time)
             },
                     now.get(Calendar.YEAR),now.get(Calendar.MONTH),now.get(Calendar.DAY_OF_MONTH))
            datePicker.show()
@@ -85,6 +86,7 @@ class NewGameActivity : AppCompatActivity() {
                // btn_show.text = timeFormat.format(selectedTime.time)
                 //val time = timeFormat.format(selectedTime.time)
                 Toast.makeText(this,"time : " + timeFormat.format(selectedTime.time),Toast.LENGTH_SHORT).show()
+                tv_hora.text = timeFormat.format(selectedTime.time)
             },
                 now.get(Calendar.HOUR_OF_DAY),now.get(Calendar.MINUTE),false)
             timePicker.show()
@@ -102,9 +104,11 @@ class NewGameActivity : AppCompatActivity() {
             var equipoB = editText_equipo2.text.toString()
             var puntosA = puntosA.text.toString().toInt()
             var puntosB = puntosB.text.toString().toInt()
+            var fecha = tv_fecha.text.toString()
+            var tiempo = tv_hora.text.toString()
 
 
-            var game= Game(nombre,equipoA,puntosA,equipoB,puntosB,nombre)
+            var game= Game(nombre,equipoA,puntosA,equipoB,puntosB,fecha,tiempo,nombre)
             gameViewModel.insert(game)
         }
         finish()
