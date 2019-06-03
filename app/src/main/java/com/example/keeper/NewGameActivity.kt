@@ -1,6 +1,7 @@
 package com.example.keeper
 
 import android.app.DatePickerDialog
+import android.app.TimePickerDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
@@ -19,7 +20,8 @@ class NewGameActivity : AppCompatActivity() {
     private lateinit var gameViewModel: GameViewModel
 
 
-    //private var formate = SimpleDateFormat("dd MM, YYYY", Locale.US)
+    var formate = SimpleDateFormat("dd MMM, yyyy", Locale.US)
+    var timeFormat = SimpleDateFormat("hh:mm a", Locale.US)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -59,8 +61,7 @@ class NewGameActivity : AppCompatActivity() {
             puntosB.text = ((puntosB.text.toString()).toInt()+3).toString()
         }
 
-
-       /* button_fecha.setOnClickListener {
+        button_fecha.setOnClickListener {
             val now = Calendar.getInstance()
                        val datePicker = DatePickerDialog(this, DatePickerDialog.OnDateSetListener { view, year, month, dayOfMonth ->
                          val selectedDate = Calendar.getInstance()
@@ -72,7 +73,22 @@ class NewGameActivity : AppCompatActivity() {
             },
                     now.get(Calendar.YEAR),now.get(Calendar.MONTH),now.get(Calendar.DAY_OF_MONTH))
            datePicker.show()
-        }*/
+        }
+
+
+        button_hora.setOnClickListener {
+            val now = Calendar.getInstance()
+            val timePicker = TimePickerDialog(this, TimePickerDialog.OnTimeSetListener { view, hourOfDay, minute ->
+                val selectedTime = Calendar.getInstance()
+                selectedTime.set(Calendar.HOUR_OF_DAY,hourOfDay)
+                selectedTime.set(Calendar.MINUTE,minute)
+               // btn_show.text = timeFormat.format(selectedTime.time)
+                //val time = timeFormat.format(selectedTime.time)
+                Toast.makeText(this,"time : " + timeFormat.format(selectedTime.time),Toast.LENGTH_SHORT).show()
+            },
+                now.get(Calendar.HOUR_OF_DAY),now.get(Calendar.MINUTE),false)
+            timePicker.show()
+        }
     }
 
 
